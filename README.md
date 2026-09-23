@@ -1,20 +1,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>역전식자재</title>
 
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#f5f5f5;color:#222}
-header{background:#087443;color:white;padding:20px;text-align:center}
-nav{background:#fff;padding:12px;text-align:center}
-nav a{margin:0 12px;text-decoration:none;color:#087443;font-weight:bold}
-section{max-width:900px;margin:30px auto;background:white;padding:30px;border-radius:12px}
-h2{color:#087443}
-input{padding:10px;width:70%;max-width:500px}
-button{padding:10px 16px;background:#087443;color:white;border:0;border-radius:5px}
-.product{display:inline-block;width:200px;margin:10px;padding:20px;background:#eee;border-radius:10px}
-footer{background:#222;color:white;text-align:center;padding:25px}
+body{font-family:Arial;margin:0;background:#f5f5f5}
+header{background:#198754;color:white;text-align:center;padding:20px}
+nav{text-align:center;background:white;padding:12px}
+nav a{margin:8px;color:#198754;text-decoration:none}
+section{background:white;margin:15px auto;padding:15px;max-width:900px;border-radius:8px}
+.box{display:flex;gap:15px;max-width:930px;margin:auto}
+.box section{width:50%}
+input{padding:9px;width:100%;box-sizing:border-box}
+button{padding:9px;background:#198754;color:white;border:0;margin-top:5px}
+.post,.product{padding:10px;border-bottom:1px solid #ddd}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:8px;text-align:center}
+footer{text-align:center;padding:20px}
+@media(max-width:600px){.box{display:block}.box section{width:auto}}
 </style>
 </head>
 
@@ -26,77 +30,112 @@ footer{background:#222;color:white;text-align:center;padding:25px}
 </header>
 
 <nav>
+<a href="#posts">게시글</a>
 <a href="#products">상품</a>
-<a href="#donation">기부금 사용내역</a>
+<a href="#donation">기부금</a>
 <a href="#contact">문의</a>
 </nav>
 
-<section>
-<h2>검색</h2>
-<input id="search" placeholder="상품명을 검색하세요">
-<button onclick="searchProduct()">검색</button>
-<p id="result"></p>
+<!-- 게시글 / 상품 -->
+
+<div class="box">
+
+<section id="posts">
+<h2>게시글</h2>
+
+<input id="postSearch" placeholder="게시글 검색">
+<button onclick="searchPosts()">검색</button>
+
+<div id="postResult"></div>
+<div id="postList"></div>
 </section>
+
 
 <section id="products">
 <h2>상품</h2>
 
-<div class="product">🥬 배추<br>5,000원</div>
-<div class="product">🍎 사과<br>8,000원</div>
-<div class="product">🐟 고등어<br>7,000원</div>
-<div class="product">🍚 쌀<br>30,000원</div>
+<input id="productSearch" placeholder="상품 검색">
+<button onclick="searchProducts()">검색</button>
+
+<div id="productResult"></div>
+
+<div class="product">🥬 배추 — 5,000원</div>
+<div class="product">🍎 사과 — 8,000원</div>
+<div class="product">🐟 고등어 — 7,000원</div>
+<div class="product">🍚 쌀 — 30,000원</div>
+
 </section>
+
+</div>
+
 
 <section id="donation">
 <h2>기부금 사용내역</h2>
 
-<table border="1" width="100%" cellpadding="10">
-<tr>
-<th>날짜</th>
-<th>사용처</th>
-<th>금액</th>
-</tr>
-
-<tr>
-<td>2026-01-01</td>
-<td>어촌계연합 기부</td>
-<td>100,000원</td>
-</tr>
-
-<tr>
-<td>2026-02-01</td>
-<td>환경운동연합 기부</td>
-<td>200,000원</td>
-<td>잔액 0원</td>
-</tr>
+<table>
+<tr><th>날짜</th><th>내용</th><th>금액</th></tr>
+<tr><td>2026-01-01</td><td>어촌계연합 기부</td><td>100,000원</td></tr>
+<tr><td>2026-02-01</td><td>환경운동연합 기부</td><td>200,000원</td></tr>
 </table>
+
+<p><b>잔액 0원</b></p>
 </section>
+
 
 <section id="contact">
-<h2>문의하기</h2>
-
-<p><a href="tel:01026946608">
-<button>📞전화문의</button>
-</a>
-</p>
-
-<p><a href="https://forms.gle/G9Bxju48dDDFhyMBA">
-<button>📋구글폼으로 문의하기</button>
-</a>
-</p>
-
+<h2>문의</h2>
+<p>전화: <a href="tel:01026946608">010-2694-6608</a></p>
+<p><a href="https://forms.gle/G9Bxju48dDDFhyMBA" target="_blank">문의하기</a></p>
 </section>
 
-<footer>
-© 2026 역전식자재. All rights reserved.
-</footer>
+<footer>© 2026 역전식자재. All rights reserved.</footer>
+
 
 <script>
-function searchProduct(){
-    let text=document.getElementById("search").value;
-    document.getElementById("result").innerText =
-        text ? "'" + text + "' 검색 결과를 확인하세요." : "검색어를 입력해주세요.";
+
+/* 게시글 */
+
+const posts=[
+{title:"역전식자재 오픈",content:"역전식자재 홈페이지가 오픈했습니다.",date:"2026-09-23"},
+{title:"새 상품 입고",content:"신선한 식자재가 새롭게 입고되었습니다.",date:"2026-09-23"}
+];
+
+function showPosts(list=posts){
+document.getElementById("postList").innerHTML=list.map(p=>`
+<div class="post">
+<b>${p.title}</b>
+<p>${p.content}</p>
+<small>${p.date}</small>
+</div>`).join("");
 }
+
+function searchPosts(){
+let w=document.getElementById("postSearch").value.toLowerCase();
+showPosts(posts.filter(p=>
+p.title.toLowerCase().includes(w)||
+p.content.toLowerCase().includes(w)));
+}
+
+
+/* 상품 */
+
+const products=[
+"🥬 배추 — 5,000원",
+"🍎 사과 — 8,000원",
+"🐟 고등어 — 7,000원",
+"🍚 쌀 — 30,000원"
+];
+
+function searchProducts(){
+let w=document.getElementById("productSearch").value.toLowerCase();
+document.getElementById("productResult").innerHTML=
+products.filter(p=>p.toLowerCase().includes(w))
+.map(p=>`<div class="product">${p}</div>`).join("")||
+"상품이 없습니다.";
+}
+
+showPosts();
+
 </script>
 
 </body>
