@@ -139,21 +139,29 @@ showPosts();
 
 </script>
 <footer>
-  <script>
-function initMap(){
-  const location={lat:37.5686,lng:126.6716};
+  <footer>
+  © 2026 역전식자재. All rights reserved.
 
-  const map=new google.maps.Map(document.getElementById("map"),{
-    zoom:16,
-    center:location
+  <div id="map" style="width:100%;height:400px;margin-top:20px;"></div>
+</footer>
+
+<script>
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 37.5686, lng: 126.6716 },
+    zoom: 16
   });
 
   new google.maps.Marker({
-    position:location,
-    map:map,
-    title:"역전식자재"
+    position: { lat: 37.5686, lng: 126.6716 },
+    map: map,
+    title: "역전식자재"
   });
 }
+</script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=네_API_키&callback=initMap">
 </script>
 </footer>
 
