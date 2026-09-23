@@ -139,7 +139,7 @@ showPosts();
 
 </script>
 
-```html
+
 <footer>
   <div id="map" style="width:100%;height:400px;margin-top:20px;"></div>
 </footer>
@@ -176,7 +176,6 @@ function initMap() {
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMWfqewJhJcRSIjWrfpRYINoYgmN6w79E&callback=initMap">
 </script>
-</footer>
 
 </body>
 </html>
