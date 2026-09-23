@@ -74,11 +74,15 @@ footer{background:#222;color:white;text-align:center;padding:25px}
 <section id="contact">
 <h2>문의하기</h2>
 
-<p>📞 전화: <a href="tel:01026946608">010-2694-6608</a></p>
+<p><a href="tel:01026946608">010-2694-6608“>
+<button>📞전화문의</button></a>
+</p>
 
-<a href="https://docs.google.com/forms/" target="_blank">
-<button>구글폼으로 문의하기</button>
+<p><a href="https://forms.gle/G9Bxju48dDDFhyMBA">
+<button>📋구글폼으로 문의하기</button>
 </a>
+</p>
+
 </section>
 
 <footer>
@@ -95,4 +99,3 @@ function searchProduct(){
 
 </body>
 </html>
-```
