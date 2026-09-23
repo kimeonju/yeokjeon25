@@ -138,8 +138,8 @@ products.filter(p=>p.toLowerCase().includes(w))
 showPosts();
 
 </script>
-
-<script>
+<footer>
+  <script>
 function initMap(){
   const location={lat:37.5686,lng:126.6716};
 
@@ -155,6 +155,7 @@ function initMap(){
   });
 }
 </script>
+</footer>
 
 <script async
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMWfqewJhJcRSIjWrfpRYINoYgmN6w79E&callback=initMap">
