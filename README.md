@@ -32,7 +32,7 @@ footer{background:#222;color:white;text-align:center;padding:25px}
 </nav>
 
 <section>
-<h2>사이트 내 검색</h2>
+<h2>검색</h2>
 <input id="search" placeholder="상품명을 검색하세요">
 <button onclick="searchProduct()">검색</button>
 <p id="result"></p>
