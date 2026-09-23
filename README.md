@@ -174,21 +174,9 @@ function initMap() {
 </script>
 
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=네_API_키&callback=initMap">
-</script>
-```
-
-
-<script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMWfqewJhJcRSIjWrfpRYINoYgmN6w79E&callback=initMap">
 </script>
 </footer>
-
-<script async
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMWfqewJhJcRSIjWrfpRYINoYgmN6w79E&callback=initMap">
-</script>
-```
-
 
 </body>
 </html>
