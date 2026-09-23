@@ -139,5 +139,28 @@ showPosts();
 
 </script>
 
+<script>
+function initMap(){
+  const location={lat:37.5686,lng:126.6716};
+
+  const map=new google.maps.Map(document.getElementById("map"),{
+    zoom:16,
+    center:location
+  });
+
+  new google.maps.Marker({
+    position:location,
+    map:map,
+    title:"역전식자재"
+  });
+}
+</script>
+
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMWfqewJhJcRSIjWrfpRYINoYgmN6w79E&callback=initMap">
+</script>
+```
+
+
 </body>
 </html>
