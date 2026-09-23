@@ -1,6 +1,5 @@
-```html
-<!DOCTYPE html>
-<html lang="ko">
+
+<html>
 <head>
 <meta charset="UTF-8">
 <title>역전식자재</title>
