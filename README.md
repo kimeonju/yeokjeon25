@@ -161,7 +161,7 @@ function initMap() {
     map: map,
     title: "역전식자재",
     icon: {
-      url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+      url: “마크.jpg”
     }
   });
 
