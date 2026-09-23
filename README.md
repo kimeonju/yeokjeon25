@@ -59,10 +59,11 @@ footer{text-align:center;padding:20px}
 
 <div id="productResult"></div>
 
-<div class="product">🥬 배추 — 5,000원</div>
-<div class="product">🍎 사과 — 8,000원</div>
-<div class="product">🐟 고등어 — 7,000원</div>
-<div class="product">🍚 쌀 — 30,000원</div>
+<div class="product">쌀          5,000원   1마리</div>
+<div class="product">사과         8,000원   1마리</div>
+<div class="product">고등어       7,000원   1마리</div>
+<div class="product">오징어       30,000원   1마리</div>
+<div class=“pruduct”>낙지         1000원   1마리
 
 </section>
 
