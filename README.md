@@ -59,14 +59,15 @@ footer{background:#222;color:white;text-align:center;padding:25px}
 
 <tr>
 <td>2026-01-01</td>
-<td>지역사회 기부</td>
+<td>어촌계연합 기부</td>
 <td>100,000원</td>
 </tr>
 
 <tr>
 <td>2026-02-01</td>
-<td>취약계층 지원</td>
+<td>환경운동연합 기부</td>
 <td>200,000원</td>
+<td>잔액 0원</td>
 </tr>
 </table>
 </section>
