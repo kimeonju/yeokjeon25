@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -97,4 +96,3 @@ function searchProduct(){
 
 </body>
 </html>
-```
